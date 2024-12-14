@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --main-color: #e4b509;
+    --text-color: #020307;
+    --bg-color: #fff;
+    --hover-color: #d9ad0e;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #020307;
+    width: 100%;
+    overflow: hidden;
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+    transition: 0.5s;
+  }
+  
+  
+  .logo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    text-decoration: none;
+  }
+  
+  .logo-pic {
+    width: 50px;
+    height: 50px;
+  }
+  
+
+.container {
+    position: relative;
+    min-width: 500px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container span {
+    position: absolute;
+    height: calc(100% + 60px);
+    width: calc(100% + 5px);
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+
+.container span:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 6s linear infinite;
+}
+
+.container span:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate 4s linear infinite;
+}
+
+.container span:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 10s linear infinite;
+}
+
+.container:hover span {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.form-container {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container h2 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+.input-container input[type="submit"] {
+    width: 100%;
+    background: rgb(36,11,54);
+    background: linear-gradient(90deg, rgba(36,11,54,1) 5%, rgba(228,181,9,1) 83%);
+    border: none;
+    cursor: pointer;
+}
+
+.input-container input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.links-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.links-container button {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
+.links-container button:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 933px) {
+  .container span {
+    width: calc(100% + 50px); /* Dynamically scale width */
+    height: calc(100% + 50px); /* Dynamically scale height */
+    border-radius: 50%; /* Maintain circular shape */
+  }
+
+  .container {
+    width: 80vw; /* Dynamically scale container width */
+    height: 80vw; /* Match width to maintain aspect ratio */
+  }
+
+  .form-container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 70vw;
+    height: 70vw; /* Ensure height matches width */
+  }
+
+  .container span {
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .container span {
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    border-radius: 50%;
+  }
+}
+  
+  
